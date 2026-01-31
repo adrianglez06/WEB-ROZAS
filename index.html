@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Centro | Alojamiento Rural en Berzosa del Lozoya</title>
+    <meta name="description"
+        content="Descubre el encanto de la Sierra Norte de Madrid. Alojamiento rural y restaurante tradicional en Berzosa del Lozoya.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#FDFBF7',
+                        text: '#333333',
+                        primary: '#E76F51', // Terracota
+                        primaryHover: '#D65D3F',
+                        crema: '#FDFBF7',
+                        charcoal: '#333333',
+                        // New Pastel Palette
+                        pastelGreen: '#E9EDC9',
+                        pastelEarth: '#FAEJDC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* background-color: #FDFBF7; */
+            /* color: #333333; */
+        }
+
+        /* Remove default blue outline */
+        *:focus {
+            outline: none !important;
+        }
+
+        /* Optional: Add a subtle custom focus for accessibility if needed, 
+           but enforcing removal as per user request */
+
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" id="navLogo" class="text-2xl font-serif text-white transition-colors duration-300">
+                        Bar Centro <span class="text-primary font-sans text-base font-medium tracking-wide">|
+                            Alojamiento Rural</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#hotel"
+                        class="nav-link text-white hover:text-primary transition-colors font-medium">Hotel</a>
+                    <a href="#restaurante"
+                        class="nav-link text-white hover:text-primary transition-colors font-medium">Restaurante</a>
+                    <a href="#carta"
+                        class="nav-link text-white hover:text-primary transition-colors font-medium">Carta</a>
+                    <a href="#entorno"
+                        class="nav-link text-white hover:text-primary transition-colors font-medium">Entorno</a>
+                    <a href="#contacto"
+                        class="nav-link text-white hover:text-primary transition-colors font-medium">Contacto</a>
+                    <a href="#contacto"
+                        class="bg-primary hover:bg-primaryHover text-white px-5 py-2 rounded-full font-medium transition-all duration-300 shadow-md transform hover:scale-105 hover:-translate-y-1 hover:shadow-lg">
+                        Reservar
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-white hover:text-primary p-2 transition-colors duration-300">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="images/fachada-derecha.jpg" alt="Fachada Bar Centro Berzosa" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <p
+                class="text-xl md:text-2xl text-white/90 font-medium mb-6 tracking-widest uppercase text-sm shadow-sm font-sans">
+                Tu refugio de desconexión
+            </p>
+            <h1 class="text-5xl md:text-7xl font-serif font-medium text-white mb-8 leading-tight text-shadow">
+                Hotel Rural y Restaurante
+                <span class="text-2xl md:text-3xl font-sans font-light block mt-4 text-white/90 tracking-wide">Descanso,
+                    naturaleza y buena mesa
+                    en Berzosa del Lozoya</span>
+            </h1>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+                <a href="#hotel"
+                    class="bg-primary hover:bg-primaryHover text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg transform hover:-translate-y-1 hover:shadow-xl">
+                    Reservar Habitación
+                </a>
+                <a href="#restaurante"
+                    class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-text px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg transform hover:-translate-y-1 backdrop-blur-sm">
+                    Reservar Mesa
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/80">
+            <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </div>
+    </header>
+
+    <!-- Hotel Section -->
+    <section id="hotel" class="py-16 md:py-24 bg-crema">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="order-2 md:order-1 space-y-6">
+                    <div <span>El Alojamiento</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-medium text-text mb-4">Descanso absoluto en plena
+                        naturaleza</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Nuestras 4 habitaciones exclusivas han sido reformadas pensando en tu confort. Acogedoras,
+                        luminosas y con unas vistas privilegiadas a la montaña que te harán olvidar el estrés de la
+                        ciudad.
+                    </p>
+                    <ul class="space-y-4 pt-2">
+                        <li class="flex items-center text-gray-700">
+                            <span class="p-2 bg-pastelGreen rounded-full mr-3 text-charcoal">
+                                <i data-lucide="wifi" class="w-5 h-5"></i>
+                            </span>
+                            Wifi gratuito de alta velocidad
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="p-2 bg-pastelGreen rounded-full mr-3 text-charcoal">
+                                <i data-lucide="sun" class="w-5 h-5"></i>
+                            </span>
+                            Vistas panorámicas
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="p-2 bg-pastelGreen rounded-full mr-3 text-charcoal">
+                                <i data-lucide="coffee" class="w-5 h-5"></i>
+                            </span>
+                            Desayuno artesanal incluido
+                        </li>
+                    </ul>
+                    <div class="pt-6">
+                        <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-md transform hover:-translate-y-1 hover:shadow-lg">
+                            <span class="mr-2">Ver Disponibilidad y Precios en Booking</span>
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image Grid -->
+                <div class="order-1 md:order-2 grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="overflow-hidden rounded-2xl shadow-xl h-48 w-full cursor-pointer">
+                            <img src="images/habitacion-amarilla.jpg" alt="Habitación Rural Confortable"
+                                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="overflow-hidden rounded-2xl shadow-xl h-64 w-full cursor-pointer">
+                            <img src="images/habitacion-azul.jpg" alt="Habitación Azul"
+                                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                    <div class="space-y-4 mt-8">
+                        <div class="overflow-hidden rounded-2xl shadow-xl h-64 w-full cursor-pointer">
+                            <img src="images/bano.jpg" alt="Baño Moderno y Limpio"
+                                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <!-- Placeholder or detail shot if needed, using facade part for balance -->
+                        <div class="overflow-hidden rounded-2xl shadow-xl h-48 w-full cursor-pointer">
+                            <img src="images/fachada-derecha.jpg" alt="Detalle"
+                                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Section -->
+    <section id="restaurante" class="py-16 md:py-24 bg-white relative overflow-hidden border-t border-stone-100">
+        <!-- Decoration BG -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-pastelEarth rounded-full blur-3xl -z-0 opacity-50"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <!-- Image -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-primary/20 rounded-2xl transform translate-x-3 translate-y-3 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform">
+                    </div>
+                    <div class="overflow-hidden rounded-2xl shadow-xl w-full h-[500px] relative">
+                        <img src="images/terraza.jpg" alt="Terraza Restaurante Vistas"
+                            class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="space-y-6">
+                    <div <span>El Restaurante</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-medium text-text mb-4">Sabor a pueblo, cocina con
+                        alma</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed font-medium text-primary">
+                        Especialidad en carnes a la brasa y comida tradicional de la sierra.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Disfruta de nuestra cocina tradicional elaborada con productos locales. Desde platos de cuchara
+                        que reconfortan hasta carnes de la sierra la brasa.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Nuestra terraza ofrece el escenario perfecto: aire puro, tranquilidad y unas vistas que
+                        alimentan el espíritu tanto como nuestra comida.
+                    </p>
+
+                    <div class="pt-8">
+                        <a href="tel:652856079"
+                            class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            <i data-lucide="phone-call" class="w-5 h-5 mr-3"></i>
+                            Reservar Mesa (652 856 079)
+                        </a>
+                        <p class="mt-3 text-sm text-gray-500">También atendemos reservas por WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carta / Menu Section -->
+    <section id="carta" class="py-16 md:py-24 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div
+                    class="inline-flex items-center space-x-2 text-primary font-semibold tracking-wider uppercase text-sm mb-4">
+                    <i data-lucide="scroll" class="w-5 h-5"></i>
+                    <span>Nuestra Carta</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-serif font-medium text-text">Platos que enamoran</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Entrantes -->
+                <div
+                    class="bg-pastelEarth p-8 rounded-xl shadow-md border border-pastelEarth/50 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-primary mb-6 flex items-center">
+                        <i data-lucide="soup" class="w-5 h-5 mr-2"></i> Entrantes
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between border-b border-gray-300/50 pb-2">
+                            <span class="font-medium text-charcoal">Croquetas Caseras</span>
+                            <span class="text-gray-600 font-medium">12€</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-300/50 pb-2">
+                            <span class="font-medium text-charcoal">Judiones de la Granja</span>
+                            <span class="text-gray-600 font-medium">14€</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-300/50 pb-2">
+                            <span class="font-medium text-charcoal">Migas del Pastor</span>
+                            <span class="text-gray-600 font-medium">10€</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Carnes -->
+                <div
+                    class="bg-white p-8 rounded-xl shadow-xl border-2 border-primary/10 relative transform md:-translate-y-4 hover:shadow-2xl transition-shadow duration-300">
+                    <div
+                        class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-sm">
+                        Especialidad
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-6 flex items-center">
+                        <i data-lucide="beef" class="w-5 h-5 mr-2"></i> Carnes a la Brasa
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between border-b border-gray-300/50 pb-2">
+                            <span class="font-medium text-charcoal">Entrecot de Ternera</span>
+                            <span class="text-gray-600 font-medium">22€</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-300/50 pb-2">
+                            <span class="font-medium text-charcoal">Chuletón de la Sierra (1kg)</span>
+                            <span class="text-gray-600 font-medium">55€</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-300/50 pb-2">
+                            <span class="font-medium text-charcoal">Cordero Asado</span>
+                            <span class="text-gray-600 font-medium">24€</span>
+                        </li>
+                    </ul>
+                    <p class="mt-4 text-xs text-gray-500 italic text-center">
+                        Disponemos de opciones para alérgenos. Consúltanos.
+                    </p>
+                </div>
+
+                <!-- Postres -->
+                <div
+                    class="bg-pastelEarth p-8 rounded-xl shadow-md border border-pastelEarth/50 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-primary mb-6 flex items-center">
+                        <i data-lucide="ice-cream" class="w-5 h-5 mr-2"></i> Postres Caseros
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between border-b border-gray-300/50 pb-2">
+                            <span class="font-medium text-charcoal">Tarta de Queso</span>
+                            <span class="text-gray-600 font-medium">6€</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-300/50 pb-2">
+                            <span class="font-medium text-charcoal">Arroz con Leche</span>
+                            <span class="text-gray-600 font-medium">5€</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-300/50 pb-2">
+                            <span class="font-medium text-charcoal">Flan de Huevo</span>
+                            <span class="text-gray-600 font-medium">5€</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-gray-500 italic mb-6">Pregunta por nuestras sugerencias del día y vinos de la tierra.</p>
+                <div class="overflow-hidden rounded-2xl shadow-lg h-64 w-full cursor-pointer">
+                    <img src="images/vistas.jpg" alt="Detalle Restaurante"
+                        class="w-full h-full object-cover opacity-90 transform hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entorno Section (Updated) -->
+    <section id="entorno" class="py-16 md:py-24 relative bg-pastelGreen">
+        <div class="absolute inset-0 z-0">
+            <img src="images/vistas.jpg" alt="Vistas Berzosa"
+                class="w-full h-full object-cover opacity-10 mix-blend-multiply">
+            <div class="absolute inset-0 bg-gradient-to-t from-pastelGreen via-transparent to-pastelGreen"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <div
+                class="inline-flex items-center space-x-2 text-primary font-semibold tracking-wider uppercase text-sm mb-4">
+                <span class="text-charcoal/80">Berzosa del Lozoya</span>
+            </div>
+
+            <h2 class="text-4xl md:text-5xl font-serif font-medium text-text mb-6">Un entorno para perderse</h2>
+            <p class="text-lg text-charcoal/80 mb-8 font-medium">
+                Rutas de senderismo, ciclismo y la paz de uno de los pueblos con más encanto de la Sierra Norte.
+                Pregúntanos por las mejores rutas cuando llegues.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer & Contact -->
+    <footer id="contacto" class="bg-[#2D2D2D] text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Brand -->
+                <div class="space-y-4">
+                    <h3 class="text-3xl font-serif font-medium text-white">Bar Centro</h3>
+                    <p class="text-gray-400">Alojamiento Rural y Restaurante.</p>
+                    <p class="text-gray-400 italic">Situado en el corazón de la Sierra Norte.</p>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold text-primary">Contacto</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://maps.google.com/?q=Calle+Real+35,28194+Berzosa+del+Lozoya" target="_blank"
+                                class="flex items-start text-gray-300 hover:text-white transition-colors group">
+                                <i data-lucide="map-pin"
+                                    class="w-5 h-5 mr-3 mt-1 text-primary group-hover:scale-110 transition-transform"></i>
+                                <span>Calle Real 35, <br>28194 Berzosa del Lozoya</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:652856079"
+                                class="flex items-center text-gray-300 hover:text-white transition-colors group">
+                                <i data-lucide="phone"
+                                    class="w-5 h-5 mr-3 text-primary group-hover:scale-110 transition-transform"></i>
+                                <span>652 856 079</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:barrestauranteberzosa@gmail.com"
+                                class="flex items-center text-gray-300 hover:text-white transition-colors group">
+                                <i data-lucide="mail"
+                                    class="w-5 h-5 mr-3 text-primary group-hover:scale-110 transition-transform"></i>
+                                <span>barrestauranteberzosa@gmail.com</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Map (Placeholder for easy integration) -->
+                <div
+                    class="rounded-lg overflow-hidden h-48 bg-gray-700 flex items-center justify-center relative group cursor-pointer">
+                    <!-- This would be an iframe map in production -->
+                    <div
+                        class="absolute inset-0 bg-[url('images/fachada.jpg')] bg-cover opacity-50 group-hover:opacity-75 transition-opacity">
+                    </div>
+                    <span class="relative z-10 font-medium flex items-center">
+                        <i data-lucide="map" class="w-5 h-5 mr-2"></i> Ver en Google Maps
+                    </span>
+                    <a href="https://maps.google.com/?q=Calle+Real+35,28194+Berzosa+del+Lozoya" target="_blank"
+                        class="absolute inset-0 z-20"></a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500 text-sm">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> Bar Centro Berzosa. Todos los derechos
+                reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/34652856079" target="_blank" rel="noopener noreferrer"
+        class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#20bd5a] transition-all transform hover:scale-110 hover:-translate-y-1 z-50 flex items-center justify-center w-16 h-16"
+        aria-label="Contactar por WhatsApp">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+    </a>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+
+        // Scroll Aware Navbar Script
+        const nav = document.getElementById('mainNav');
+        const logo = document.getElementById('navLogo');
+        const links = document.querySelectorAll('.nav-link');
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+
+        function updateNavbar() {
+            if (window.scrollY > 50) {
+                // Scrolled: Cream bg, Dark text
+                nav.classList.remove('bg-transparent');
+                nav.classList.add('bg-[#FDFBF7]', 'shadow-md');
+
+                logo.classList.remove('text-white');
+                logo.classList.add('text-text');
+
+                links.forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-text');
+                });
+
+                mobileBtn.classList.remove('text-white');
+                mobileBtn.classList.add('text-text');
+            } else {
+                // Top: Transparent bg, White text
+                nav.classList.add('bg-transparent');
+                nav.classList.remove('bg-[#FDFBF7]', 'shadow-md');
+
+                logo.classList.add('text-white');
+                logo.classList.remove('text-text');
+
+                links.forEach(link => {
+                    link.classList.add('text-white');
+                    link.classList.remove('text-text');
+                });
+
+                mobileBtn.classList.add('text-white');
+                mobileBtn.classList.remove('text-text');
+            }
+        }
+
+        // Listen to scroll event
+        window.addEventListener('scroll', updateNavbar);
+
+        // Initial check in case page is reloaded scrolled down
+        updateNavbar();
+    </script>
+</body>
+
+</html>
