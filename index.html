@@ -163,7 +163,7 @@
     </header>
 
     <!-- Sobre Nosotros Section -->
-    <section id="sobre-nosotros" class="py-16 md:py-24 bg-white">
+    <section id="sobre-nosotros" class="py-8 md:py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <!-- Image -->
@@ -198,7 +198,7 @@
     </section>
 
     <!-- Hotel Section -->
-    <section id="hotel" class="py-16 md:py-24 bg-crema">
+    <section id="hotel" class="py-8 md:py-12 bg-crema">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <!-- Text Content -->
@@ -270,7 +270,7 @@
     </section>
 
     <!-- Restaurant Section -->
-    <section id="restaurante" class="py-16 md:py-24 bg-white relative overflow-hidden border-t border-stone-100">
+    <section id="restaurante" class="py-8 md:py-12 bg-white relative overflow-hidden border-t border-stone-100">
         <!-- Decoration BG -->
         <div class="absolute top-0 right-0 w-64 h-64 bg-pastelEarth rounded-full blur-3xl -z-0 opacity-50"></div>
 
@@ -305,12 +305,27 @@
                         alimentan el espíritu tanto como nuestra comida.
                     </p>
 
-                    <div class="pt-8">
-                        <a href="tel:652856079"
+                    <div class="pt-8" id="reservationContainer">
+                        <!-- Initial Button -->
+                        <button id="btnInitReservation"
                             class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                            <i data-lucide="phone-call" class="w-5 h-5 mr-3"></i>
-                            Reservar Mesa (652 856 079)
-                        </a>
+                            <i data-lucide="calendar" class="w-5 h-5 mr-3"></i>
+                            Reservar Mesa
+                        </button>
+
+                        <!-- Options (Hidden by default) -->
+                        <div id="reservationOptions" class="hidden flex flex-col sm:flex-row gap-4 animate-fade-in">
+                            <a href="tel:652856079"
+                                class="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-lg font-semibold transition-all duration-300 shadow-md">
+                                <i data-lucide="phone-call" class="w-5 h-5 mr-3"></i>
+                                Llamar
+                            </a>
+                            <a href="mailto:barrestauranteberzosa@gmail.com"
+                                class="inline-flex items-center justify-center bg-gray-500 hover:bg-gray-600 text-white px-6 py-4 rounded-lg font-semibold transition-all duration-300 shadow-md">
+                                <i data-lucide="mail" class="w-5 h-5 mr-3"></i>
+                                Email
+                            </a>
+                        </div>
                         <p class="mt-3 text-sm text-gray-500"></p>
                     </div>
                 </div>
@@ -319,7 +334,7 @@
     </section>
 
     <!-- Carta / Menu Section -->
-    <section id="carta" class="py-16 md:py-24 bg-background">
+    <section id="carta" class="py-8 md:py-12 bg-background">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <div
@@ -416,7 +431,7 @@
     </section>
 
     <!-- Entorno Section (Updated) -->
-    <section id="entorno" class="py-16 md:py-24 relative bg-pastelGreen">
+    <section id="entorno" class="py-8 md:py-12 relative bg-pastelGreen">
         <div class="absolute inset-0 z-0">
             <img src="images/vistas.jpg" alt="Vistas Berzosa"
                 class="w-full h-full object-cover opacity-10 mix-blend-multiply">
@@ -440,7 +455,7 @@
 
 
     <!-- Reseñas Section -->
-    <section id="resenas" class="py-16 md:py-24 bg-[#FDFBF7]">
+    <section id="resenas" class="py-8 md:py-12 bg-[#FDFBF7]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <div
@@ -635,6 +650,17 @@
 
         // Initial check in case page is reloaded scrolled down
         updateNavbar();
+
+        // Reservation Button Logic
+        const btnInitReservation = document.getElementById('btnInitReservation');
+        const reservationOptions = document.getElementById('reservationOptions');
+
+        if (btnInitReservation) {
+            btnInitReservation.addEventListener('click', () => {
+                btnInitReservation.classList.add('hidden');
+                reservationOptions.classList.remove('hidden');
+            });
+        }
     </script>
 </body>
 
