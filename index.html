@@ -104,6 +104,23 @@
                 </div>
             </div>
         </div>
+        <!-- Mobile Menu Container -->
+        <div id="mobileMenu"
+            class="hidden md:hidden bg-white absolute top-20 left-0 w-full shadow-lg border-t border-gray-100">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col items-center">
+                <a href="#sobre-nosotros"
+                    class="mobile-nav-link block px-3 py-3 text-lg font-medium text-charcoal hover:text-primary transition-colors">Sobre
+                    Nosotros</a>
+                <a href="#hotel"
+                    class="mobile-nav-link block px-3 py-3 text-lg font-medium text-charcoal hover:text-primary transition-colors">Hotel</a>
+                <a href="#restaurante"
+                    class="mobile-nav-link block px-3 py-3 text-lg font-medium text-charcoal hover:text-primary transition-colors">Restaurante</a>
+                <a href="#resenas"
+                    class="mobile-nav-link block px-3 py-3 text-lg font-medium text-charcoal hover:text-primary transition-colors">Reseñas</a>
+                <a href="#contacto"
+                    class="mobile-nav-link block px-3 py-3 text-lg font-medium text-charcoal hover:text-primary transition-colors">Contacto</a>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -144,6 +161,41 @@
             <i data-lucide="chevron-down" class="w-8 h-8"></i>
         </div>
     </header>
+
+    <!-- Sobre Nosotros Section -->
+    <section id="sobre-nosotros" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Image -->
+                <div class="order-2 md:order-1 relative">
+                    <div class="overflow-hidden rounded-2xl shadow-xl h-[400px] w-full">
+                        <img src="images/fachada.jpg" alt="Nuestra Casa"
+                            class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="order-1 md:order-2 space-y-6">
+                    <div
+                        class="inline-flex items-center space-x-2 text-primary font-semibold tracking-wider uppercase text-sm mb-2">
+                        <span>Nuestra Historia</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-medium text-text mb-4">Más que un hotel, una casa
+                    </h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        En Bar Centro, creemos que la hospitalidad no se trata solo de ofrecer una cama, sino de hacer
+                        sentir a cada huésped como parte de nuestra familia. Llevamos décadas recibiendo a viajeros con
+                        el mismo cariño del primer día.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Cada rincón ha sido cuidado con esmero, respetando la tradición de la Sierra Norte pero
+                        añadiendo el confort que mereces. Aquí, el tiempo se detiene y los detalles marcan la
+                        diferencia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Hotel Section -->
     <section id="hotel" class="py-16 md:py-24 bg-crema">
@@ -385,40 +437,7 @@
         </div>
     </section>
 
-    <!-- Sobre Nosotros Section -->
-    <section id="sobre-nosotros" class="py-16 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <!-- Image -->
-                <div class="order-2 md:order-1 relative">
-                    <div class="overflow-hidden rounded-2xl shadow-xl h-[400px] w-full">
-                        <img src="images/fachada.jpg" alt="Nuestra Casa"
-                            class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
-                    </div>
-                </div>
 
-                <!-- Text Content -->
-                <div class="order-1 md:order-2 space-y-6">
-                    <div
-                        class="inline-flex items-center space-x-2 text-primary font-semibold tracking-wider uppercase text-sm mb-2">
-                        <span>Nuestra Historia</span>
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-serif font-medium text-text mb-4">Más que un hotel, una casa
-                    </h2>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        En Bar Centro, creemos que la hospitalidad no se trata solo de ofrecer una cama, sino de hacer
-                        sentir a cada huésped como parte de nuestra familia. Llevamos décadas recibiendo a viajeros con
-                        el mismo cariño del primer día.
-                    </p>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        Cada rincón ha sido cuidado con esmero, respetando la tradición de la Sierra Norte pero
-                        añadiendo el confort que mereces. Aquí, el tiempo se detiene y los detalles marcan la
-                        diferencia.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Reseñas Section -->
     <section id="resenas" class="py-16 md:py-24 bg-[#FDFBF7]">
@@ -594,6 +613,22 @@
                 mobileBtn.classList.remove('text-text');
             }
         }
+
+        // Mobile Menu Logic
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        // Toggle Menu
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
 
         // Listen to scroll event
         window.addEventListener('scroll', updateNavbar);
